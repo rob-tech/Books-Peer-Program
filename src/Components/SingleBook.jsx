@@ -7,8 +7,8 @@ import items from "../horror.json";
 class SingleBook extends Component {
 
     render() {
-
-        const latestBooks =  items.map((item) => {
+      
+        const latestBooks =  items.slice(0, 1).map((item) => {
         return (
                <Container className="cardCont">
               <Card>
