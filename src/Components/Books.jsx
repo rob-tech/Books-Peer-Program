@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import WarningAlert from "./WarningAlert";
 import MyBadge from "./MyBadge";
-import SingleBook from "./SingleBook";
+import BookList from "./BookList";
+import items from "../horror.json";
+
+
+
 
 class Books extends Component {
     
@@ -19,7 +23,9 @@ class Books extends Component {
       <>
         <WarningAlert AlertSign={this.state.text}/>
         <MyBadge MyBadgeContent={this.badge.text} color={this.badge.color}/>
-        <SingleBook/>
+         <BookList 
+             books={items.splice(this.state.starting, 20)}/>
+      
     
       </>
     );

@@ -1,37 +1,29 @@
 import React, { Component } from "react";
 import { Container, Card, CardImg, CardText, CardBody,
-    CardTitle, Button } from 'reactstrap';
-import items from "../horror.json";
+    CardTitle, CardSubtitle} from 'reactstrap';
 
 
 class SingleBook extends Component {
-
+state = {};
     render() {
       
-        const latestBooks =  items.slice(0, 1).map((item) => {
-        return (
+        return( 
+      
                <Container className="cardCont">
               <Card>
-                <CardImg top width="100%" className = "cardImg" src={item.img} alt={item.title}  key={item.id}/>
+                <CardImg top width="100%" className = "cardImg" src={this.props.items.img} alt={this.props.items.title}/>
                 <CardBody>
-                  <CardTitle>{item.title}</CardTitle>
-                  <CardText>{item.price}</CardText>
-                  <Button>Button</Button>
+                    <CardTitle>{this.props.items.title}</CardTitle>
+                     <CardSubtitle>{this.props.items.asin}</CardSubtitle>
+                   <CardText>{this.props.items.price}</CardText>
                 </CardBody>
               </Card>
               </Container>
            
           );
-        });
-     
-        return (
-            <>
-            {latestBooks}
-            </>
-            )
+       
     
-        }
 }
-
+}
 
       export default SingleBook;
